@@ -137,7 +137,6 @@
 		curl_setopt($ch, CURLOPT_HEADER, false);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		$html = curl_exec($ch);
-		echo $html."<br>";
 		$res = json_decode($html);
 		$is_connected = isset($res->result);
 
@@ -170,7 +169,7 @@
 
 	function encrypter($str) //функция шифрования для данных
 	{
-		if ($str == "" || $str === undefined) 
+		if ($str == "") 
 		{
 			return "";
 		}
